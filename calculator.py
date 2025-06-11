@@ -5,6 +5,8 @@ from operations.divide import divide
 
 def main():
     print("Simple Calculator")
+    print("Creating merge conflict")
+
     a = float(input("Enter first number: "))
     b = float(input("Enter second number: "))
     op = input("Choose operation (+, -, *, /): ")
