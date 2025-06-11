@@ -11,6 +11,7 @@ def get_number(prompt):
             print("Invalid input. Please enter a valid number.")
 
 def main():
+    print("Welcome to the calculator!")
     print("=== Simple Calculator ===")
     print("Creating merge conflict - A version")
 
@@ -41,3 +42,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
