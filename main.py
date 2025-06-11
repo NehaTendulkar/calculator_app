@@ -4,7 +4,8 @@ from operations.multiply import multiply
 from operations.divide import divide
 
 def main():
-    print("Simple Calculator")
+    print("Welcome to the calculator!")  # This is the new line
+
     a = float(input("Enter first number: "))
     b = float(input("Enter second number: "))
     op = input("Choose operation (+, -, *, /): ")
