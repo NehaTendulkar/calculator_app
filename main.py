@@ -3,23 +3,43 @@ from operations.subtract import subtract
 from operations.multiply import multiply
 from operations.divide import divide
 
+def get_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
 def main():
-    print("Welcome to the calculator!")  # This is the new line
+    print("Welcome to the calculator!")
+    print("=== Simple Calculator ===")
+    print("Creating merge conflict - A version")
 
-    a = float(input("Enter first number: "))
-    b = float(input("Enter second number: "))
-    op = input("Choose operation (+, -, *, /): ")
+    while True:
+        a = get_number("Enter first number (or 'q' to quit): ")
+        b = get_number("Enter second number: ")
+        op = input("Choose operation (+, -, *, /) or 'q' to quit: ")
 
-    if op == "+":
-        print("Result:", add(a, b))
-    elif op == "-":
-        print("Result:", subtract(a, b))
-    elif op == "*":
-        print("Result:", multiply(a, b))
-    elif op == "/":
-        print("Result:", divide(a, b))
-    else:
-        print("Invalid operation")
+        if op.lower() == 'q':
+            print("Exiting calculator. Goodbye!")
+            break
+
+        if op == "+":
+            print("Result:", add(a, b))
+        elif op == "-":
+            print("Result:", subtract(a, b))
+        elif op == "*":
+            print("Result:", multiply(a, b))
+        elif op == "/":
+            try:
+                print("Result:", divide(a, b))
+            except ZeroDivisionError:
+                print("Error: Cannot divide by zero.")
+        else:
+            print("Invalid operation. Please choose from +, -, *, /.")
+
+        print("-" * 30)
 
 if __name__ == "__main__":
     main()
+
